@@ -34,3 +34,24 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+  build2:
+    runs-on: ubuntu-latest
+    needs: build
+    
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Do some final steps
+        run: echo Wow!
+      
+  test:
+    runs-on: ubuntu-latest
+    steps:
+       - uses: actions/checkout@v2
+     
+       - name: Do some more running
+         run: echo Goodbye, world!
+      
+       - name: Walk now
+         run: echo I just need some filler
+    
